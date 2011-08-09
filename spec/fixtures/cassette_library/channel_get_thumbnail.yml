@@ -1,0 +1,68 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.kewego.com:80/app/getToken/?appKey=d4c804fd0f42533351aca404313d26eb
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      expires: 
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      content-type: 
+      - text/html; charset=utf-8
+      server: 
+      - lighttpd
+      date: 
+      - Tue, 09 Aug 2011 14:19:56 GMT
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <kewego_response>
+      	<message><appToken>34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8</appToken></message>
+      	<KqId>4e41420cced37</KqId>
+      </kewego_response>
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.kewego.com:80/channel/getThumbnail/?appToken=34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8&csig=iLyROoafYVn8
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      expires: 
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      content-type: 
+      - text/html; charset=utf-8
+      server: 
+      - lighttpd
+      date: 
+      - Tue, 09 Aug 2011 14:19:57 GMT
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <kewego_response error="yes">
+      	<kewego_error errno="6020">No video found with this CSIG</kewego_error>
+      	<kewego_request>
+      		<url><![CDATA[http://api.kewego.com/channel/getThumbnail/?appToken=34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8&csig=iLyROoafYVn8]]></url>
+      		<get>
+      			<appToken><![CDATA[34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8]]></appToken>
+      			<csig><![CDATA[iLyROoafYVn8]]></csig>
+      		</get>
+      		<post/>
+      		<file/>
+      	</kewego_request>
+      	<KqId>4e41420d6515c</KqId>
+      </kewego_response>
+
+    http_version: "1.1"

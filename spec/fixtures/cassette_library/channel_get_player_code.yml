@@ -1,0 +1,69 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.kewego.com:80/app/getToken/?appKey=d4c804fd0f42533351aca404313d26eb
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      expires: 
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      content-type: 
+      - text/html; charset=utf-8
+      server: 
+      - lighttpd
+      date: 
+      - Tue, 09 Aug 2011 14:19:54 GMT
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <kewego_response>
+      	<message><appToken>34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8</appToken></message>
+      	<KqId>4e41420a86d07</KqId>
+      </kewego_response>
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.kewego.com:80/channel/getPlayerCode/?appToken=34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8&csig=iLyROoafYVn8&language_code=es
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      expires: 
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      content-type: 
+      - text/html; charset=utf-8
+      server: 
+      - lighttpd
+      date: 
+      - Tue, 09 Aug 2011 14:19:55 GMT
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <kewego_response>
+      	<message><blog><![CDATA[<object  id="iLyROoafYVn8"  type="application/x-shockwave-flash"  data="http://sll.kewego.com/swf/p3/epix.swf"  width="400"  height="300"> <param name="flashVars" value="language_code=es&playerKey=5e3d22b8b739&skinKey=&csig=iLyROoafYVn8&autostart=false" /> <param name="movie" value="http://sll.kewego.com/swf/p3/epix.swf" /> <param name="allowFullScreen" value="true" /> <param name="allowscriptaccess" value="always" /></object>]]></blog></message>
+      	<kewego_request>
+      		<url><![CDATA[http://api.kewego.com/channel/getPlayerCode/?appToken=34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8&language_code=es&csig=iLyROoafYVn8]]></url>
+      		<get>
+      			<appToken><![CDATA[34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8]]></appToken>
+      			<language_code><![CDATA[es]]></language_code>
+      			<csig><![CDATA[iLyROoafYVn8]]></csig>
+      		</get>
+      		<post/>
+      		<file/>
+      	</kewego_request>
+      	<KqId>4e41420b19300</KqId>
+      </kewego_response>
+
+    http_version: "1.1"

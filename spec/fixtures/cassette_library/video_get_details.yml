@@ -1,0 +1,69 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.kewego.com:80/app/getToken/?appKey=d4c804fd0f42533351aca404313d26eb
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      expires: 
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      content-type: 
+      - text/html; charset=utf-8
+      server: 
+      - lighttpd
+      date: 
+      - Tue, 09 Aug 2011 14:19:50 GMT
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <kewego_response>
+      	<message><appToken>34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8</appToken></message>
+      	<KqId>4e4142068cdc3</KqId>
+      </kewego_response>
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.kewego.com:80/video/getDetails/?appToken=34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8&fullDetails=false&sig=iLyROoaf22Mr
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      expires: 
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      content-type: 
+      - text/html; charset=utf-8
+      server: 
+      - lighttpd
+      date: 
+      - Tue, 09 Aug 2011 14:19:51 GMT
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <kewego_response>
+      	<message><ratio>1.7778</ratio><default_display_subtitle>none</default_display_subtitle><available_subtitles>available_subtitle</available_subtitles><slideAvailable>no</slideAvailable><chapterAvailable>no</chapterAvailable><title><![CDATA[Entrevista Ceos CharHadas]]></title><description><![CDATA[<p>bmv jhgvjhgcvjgfcgvcj</p>]]></description><author>anacharhadas</author><views>16</views><duration>221</duration><rate>0</rate><rating_count>0</rating_count><comments>0</comments><language>es</language><country>es</country><postal_code>28023</postal_code><production_date>0000-00-00 00:00:00</production_date><audience_classification>all_public</audience_classification><categories><category><![CDATA[Actualidades]]></category></categories><publication_date>2011-07-06 13:26:20</publication_date><access>public</access><keywords><keyword><![CDATA[entrevista]]></keyword><keyword><![CDATA[ceos]]></keyword><keyword><![CDATA[socias]]></keyword></keywords><available_formats><format>ipadHQ</format><format>iphone</format><format>iphone3G</format><format alias="sd">normal</format><format>old</format><format>slides</format></available_formats><default_format>sd</default_format><videoblog_link></videoblog_link><broadcast_start_date>2011-07-06 13:26:20</broadcast_start_date><broadcast_end_date>2037-12-31 23:59:59</broadcast_end_date><pid><![CDATA[]]></pid><thumbnails><small><url><![CDATA[http://tll.kewego.com/t/0/0071/74x54_iLyROoaf22Mr_1.jpg]]></url><url><![CDATA[http://tll.kewego.com/t/0/0071/74x54_iLyROoaf22Mr_2.jpg]]></url><url><![CDATA[http://tll.kewego.com/t/0/0071/74x54_iLyROoaf22Mr_3.jpg]]></url></small><medium><url><![CDATA[http://tll.kewego.com/t/0/0071/154x114_iLyROoaf22Mr_1.jpg]]></url><url><![CDATA[http://tll.kewego.com/t/0/0071/154x114_iLyROoaf22Mr_2.jpg]]></url><url><![CDATA[http://tll.kewego.com/t/0/0071/154x114_iLyROoaf22Mr_3.jpg]]></url></medium><large><url><![CDATA[http://tll.kewego.com/t/0/0071/400x300_iLyROoaf22Mr_1.jpg]]></url><url><![CDATA[http://tll.kewego.com/t/0/0071/400x300_iLyROoaf22Mr_2.jpg]]></url><url><![CDATA[http://tll.kewego.com/t/0/0071/400x300_iLyROoaf22Mr_3.jpg]]></url></large></thumbnails><metadata><![CDATA[]]></metadata></message>
+      	<kewego_request>
+      		<url><![CDATA[http://api.kewego.com/video/getDetails/?appToken=34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8&fullDetails=false&sig=iLyROoaf22Mr]]></url>
+      		<get>
+      			<appToken><![CDATA[34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8]]></appToken>
+      			<fullDetails><![CDATA[false]]></fullDetails>
+      			<sig><![CDATA[iLyROoaf22Mr]]></sig>
+      		</get>
+      		<post/>
+      		<file/>
+      	</kewego_request>
+      	<KqId>4e4142072f943</KqId>
+      </kewego_response>
+
+    http_version: "1.1"

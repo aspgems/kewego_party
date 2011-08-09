@@ -1,0 +1,68 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.kewego.com:80/app/getToken/?appKey=d4c804fd0f42533351aca404313d26eb
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      expires: 
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      content-type: 
+      - text/html; charset=utf-8
+      server: 
+      - lighttpd
+      date: 
+      - Tue, 09 Aug 2011 14:19:47 GMT
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <kewego_response>
+      	<message><appToken>34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8</appToken></message>
+      	<KqId>4e4142039b855</KqId>
+      </kewego_response>
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.kewego.com:80/channelList/getChannels/?appToken=34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8&lsig=327982b09c3l&max_result_per_page=100&start=0
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      expires: 
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      content-type: 
+      - text/html; charset=utf-8
+      server: 
+      - lighttpd
+      date: 
+      - Tue, 09 Aug 2011 14:19:48 GMT
+      transfer-encoding: 
+      - chunked
+    body: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\
+      <kewego_response>\n\
+      \t<message><channels><total_result>7</total_result><channel><index>1</index><username><![CDATA[charhadasadmin]]></username><country_code>fr</country_code><name><![CDATA[Recetas]]></name><creation_date>2011-06-29 09:50:21</creation_date><csig>iLyROoafYVn8</csig><counter>0</counter><nbvideos>2</nbvideos><description><![CDATA[]]></description><pid><![CDATA[]]></pid><thumbnail><![CDATA[http://tll.kewego.com/t/img/thumb_default.jpg]]></thumbnail><title_alias><![CDATA[]]></title_alias></channel><channel><index>2</index><username><![CDATA[charhadasadmin]]></username><country_code>fr</country_code><name><![CDATA[Salud]]></name><creation_date>2011-06-29 09:55:34</creation_date><csig>iLyROoafYVnz</csig><counter>0</counter><nbvideos>4</nbvideos><description><![CDATA[]]></description><pid><![CDATA[]]></pid><thumbnail><![CDATA[http://tll.kewego.com/t/img/thumb_default.jpg]]></thumbnail><title_alias><![CDATA[]]></title_alias></channel><channel><index>3</index><username><![CDATA[charhadasadmin]]></username><country_code>fr</country_code><name><![CDATA[Belleza]]></name><creation_date>2011-06-29 10:08:30</creation_date><csig>iLyROoafYVnr</csig><counter>0</counter><nbvideos>2</nbvideos><description><![CDATA[]]></description><pid><![CDATA[]]></pid><thumbnail><![CDATA[http://tll.kewego.com/t/img/thumb_default.jpg]]></thumbnail><title_alias><![CDATA[]]></title_alias></channel><channel><index>4</index><username><![CDATA[charhadasadmin]]></username><country_code>fr</country_code><name><![CDATA[Curiosidades]]></name><creation_date>2011-08-01 15:05:27</creation_date><csig>iLyROoafY92w</csig><counter>0</counter><nbvideos>9</nbvideos><description><![CDATA[]]></description><pid><![CDATA[]]></pid><thumbnail><![CDATA[http://tll.kewego.com/t/img/thumb_default.jpg]]></thumbnail><title_alias><![CDATA[]]></title_alias></channel><channel><index>5</index><username><![CDATA[charhadasadmin]]></username><country_code>fr</country_code><name><![CDATA[Embarazo y Beb\xC3\xA9]]></name><creation_date>2011-08-01 15:04:05</creation_date><csig>iLyROoafY92z</csig><counter>0</counter><nbvideos>8</nbvideos><description><![CDATA[]]></description><pid><![CDATA[]]></pid><thumbnail><![CDATA[http://tll.kewego.com/t/img/thumb_default.jpg]]></thumbnail><title_alias><![CDATA[]]></title_alias></channel><channel><index>6</index><username><![CDATA[charhadasadmin]]></username><country_code>fr</country_code><name><![CDATA[Juegos y Fiestas]]></name><creation_date>2011-08-01 15:04:39</creation_date><csig>iLyROoafY92r</csig><counter>0</counter><nbvideos>3</nbvideos><description><![CDATA[]]></description><pid><![CDATA[]]></pid><thumbnail><![CDATA[http://tll.kewego.com/t/img/thumb_default.jpg]]></thumbnail><title_alias><![CDATA[]]></title_alias></channel><channel><index>7</index><username><![CDATA[charhadasadmin]]></username><country_code>fr</country_code><name><![CDATA[Psicolog\xC3\xADa y Educaci\xC3\xB3n]]></name><creation_date>2011-08-01 15:04:27</creation_date><csig>iLyROoafY922</csig><counter>0</counter><nbvideos>4</nbvideos><description><![CDATA[]]></description><pid><![CDATA[]]></pid><thumbnail><![CDATA[http://tll.kewego.com/t/img/thumb_default.jpg]]></thumbnail><title_alias><![CDATA[]]></title_alias></channel></channels></message>\n\
+      \t<kewego_request>\n\
+      \t\t<url><![CDATA[http://api.kewego.com/channelList/getChannels/?appToken=34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8&start=0&lsig=327982b09c3l&max_result_per_page=100]]></url>\n\
+      \t\t<get>\n\
+      \t\t\t<appToken><![CDATA[34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8]]></appToken>\n\
+      \t\t\t<start/>\n\
+      \t\t\t<lsig><![CDATA[327982b09c3l]]></lsig>\n\
+      \t\t\t<max_result_per_page><![CDATA[100]]></max_result_per_page>\n\
+      \t\t</get>\n\
+      \t\t<post/>\n\
+      \t\t<file/>\n\
+      \t</kewego_request>\n\
+      \t<KqId>4e4142042da0c</KqId>\n\
+      </kewego_response>\n"
+    http_version: "1.1"

@@ -1,0 +1,60 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.kewego.com:80/app/getToken/?appKey=d4c804fd0f42533351aca404313d26eb
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      expires: 
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      content-type: 
+      - text/html; charset=utf-8
+      server: 
+      - lighttpd
+      date: 
+      - Tue, 09 Aug 2011 14:19:51 GMT
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <kewego_response>
+      	<message><appToken>34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8</appToken></message>
+      	<KqId>4e414207da593</KqId>
+      </kewego_response>
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.kewego.com:80/video/getStats/?appToken=34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac55ef6dc2b9eff6ab184f6f0356822113a8&sig=iLyROoaf22Mr&type=day&value=15
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      expires: 
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      content-type: 
+      - text/html; charset=utf-8
+      server: 
+      - lighttpd
+      date: 
+      - Tue, 09 Aug 2011 14:19:52 GMT
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <kewego_response>
+      	<message><stats sig="iLyROoaf22Mr"><points><point day="2011-07-25" value="0"/><point day="2011-07-26" value="0"/><point day="2011-07-27" value="6"/><point day="2011-07-28" value="0"/><point day="2011-07-29" value="1"/><point day="2011-07-30" value="0"/><point day="2011-07-31" value="0"/><point day="2011-08-01" value="1"/><point day="2011-08-02" value="0"/><point day="2011-08-03" value="0"/><point day="2011-08-04" value="0"/><point day="2011-08-05" value="1"/><point day="2011-08-06" value="0"/><point day="2011-08-07" value="0"/><point day="2011-08-08" value="4"/></points></stats>
+      </message>
+      	<KqId>4e4142086d9c1</KqId>
+      </kewego_response>
+
+    http_version: "1.1"
