@@ -6,16 +6,18 @@ module KewegoParty
       :password,
       :token,
       :app_token,
-      :user_agent,
-      :debug_output].freeze
+      :caching_store,
+      :debug_output,
+      :user_agent].freeze
 
-    DEFAULT_API_VERSION  = 1
-    DEFAULT_LOGIN        = nil
-    DEFAULT_PASSWORD     = nil
-    DEFAULT_TOKEN        = nil
-    DEFAULT_APP_TOKEN    = nil
-    DEFAULT_USER_AGENT   = "Kewego Ruby Gem #{KewegoParty::VERSION}".freeze
-    DEFAULT_DEBUG_OUTPUT = nil
+    DEFAULT_API_VERSION   = 1
+    DEFAULT_LOGIN         = nil
+    DEFAULT_PASSWORD      = nil
+    DEFAULT_TOKEN         = nil
+    DEFAULT_APP_TOKEN     = nil
+    DEFAULT_CACHING_STORE = ::APICache.store
+    DEFAULT_DEBUG_OUTPUT  = nil
+    DEFAULT_USER_AGENT    = "Kewego Ruby Gem #{KewegoParty::VERSION}".freeze
 
     attr_accessor(*VALID_OPTIONS_KEYS)
 
@@ -37,8 +39,11 @@ module KewegoParty
       self.password     = DEFAULT_PASSWORD
       self.token        = DEFAULT_TOKEN
       self.app_token    = DEFAULT_APP_TOKEN
-      self.user_agent   = DEFAULT_USER_AGENT
       self.debug_output = DEFAULT_DEBUG_OUTPUT
+      self.user_agent   = DEFAULT_USER_AGENT
+
+      ::APICache.send(:remove_instance_variable, :@store)
+      self.caching_store  = ::APICache.store
     end
   end
 end

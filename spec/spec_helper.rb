@@ -17,6 +17,14 @@ RSpec.configure do |c|
   c.extend VCR::RSpec::Macros
 end
 
+RSpec.configure do |c|
+  c.include WebMock::API
+
+  c.after do
+    KewegoParty.reset
+  end
+end
+
 def fixture_path
   File.expand_path("../fixtures", __FILE__)
 end

@@ -2,10 +2,6 @@
 require 'spec_helper'
 
 describe KewegoParty do
-  after do
-    KewegoParty.reset
-  end
-
   describe ".respond_to?" do
     it "should be true if method exists" do
       KewegoParty.respond_to?(:new, true).should be_true

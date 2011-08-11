@@ -1,4 +1,7 @@
 require "kewego_party/version"
+
+require 'api_cache'
+
 require 'kewego_party/configuration'
 require 'kewego_party/client'
 

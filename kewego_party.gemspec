@@ -26,6 +26,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'multi_xml',   '~> 0.2'
   gem.add_runtime_dependency 'rash',        '~> 0.3'
   gem.add_runtime_dependency 'hashie',      '~> 1.0.0'
+  gem.add_runtime_dependency 'api_cache',   '~> 0.2.3'
 
   gem.add_development_dependency 'ZenTest', '~> 4.6'
   gem.add_development_dependency 'rake',    '~> 0.9'
