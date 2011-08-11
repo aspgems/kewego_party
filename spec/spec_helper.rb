@@ -18,8 +18,6 @@ RSpec.configure do |c|
 end
 
 RSpec.configure do |c|
-  c.include WebMock::API
-
   c.after do
     KewegoParty.reset
   end

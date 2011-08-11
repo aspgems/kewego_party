@@ -1,5 +1,6 @@
 require 'httparty'
 
+require 'kewego_party/cache'
 require 'kewego_party/connection'
 require 'kewego_party/request'
 
@@ -10,7 +11,18 @@ require 'kewego_party/client/video'
 
 module KewegoParty
   class Client
-    attr_accessor(*Configuration::VALID_OPTIONS_KEYS)
+    include ::HTTParty
+
+    include KewegoParty::Cache
+    include KewegoParty::Connection
+    include KewegoParty::Request
+
+    include KewegoParty::Client::App
+    include KewegoParty::Client::ChannelList
+    include KewegoParty::Client::Channel
+    include KewegoParty::Client::Video
+
+    attr_accessor(*(Configuration::VALID_OPTIONS_KEYS - [:app_token]))
 
     def initialize(options={})
       options = KewegoParty.options.merge(options)
@@ -19,14 +31,9 @@ module KewegoParty
       end
     end
 
-    include ::HTTParty
-
-    include KewegoParty::Connection
-    include KewegoParty::Request
-
-    include KewegoParty::Client::App
-    include KewegoParty::Client::ChannelList
-    include KewegoParty::Client::Channel
-    include KewegoParty::Client::Video
+    def caching_store=(store)
+      @caching_store = store
+      APICache.store = store
+    end
   end
 end
