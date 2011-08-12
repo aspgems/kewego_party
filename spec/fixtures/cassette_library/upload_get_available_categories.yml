@@ -1,0 +1,115 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.kewego.com:80/app/getToken/?appKey=d4c804fd0f42533351aca404313d26eb
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      expires: 
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      content-type: 
+      - text/html; charset=utf-8
+      server: 
+      - lighttpd
+      date: 
+      - Fri, 12 Aug 2011 14:25:36 GMT
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <kewego_response>
+      	<message><appToken>34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac5597ddbb12ab78f17e4635ba421f47b5a0</appToken></message>
+      	<KqId>4e4537e07452c</KqId>
+      </kewego_response>
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.kewego.com:80/app/getToken/?appKey=d4c804fd0f42533351aca404313d26eb
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      expires: 
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      content-type: 
+      - text/html; charset=utf-8
+      server: 
+      - lighttpd
+      date: 
+      - Fri, 12 Aug 2011 14:25:37 GMT
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <kewego_response>
+      	<message><appToken>34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac5597ddbb12ab78f17e4635ba421f47b5a0</appToken></message>
+      	<KqId>4e4537e10bcbf</KqId>
+      </kewego_response>
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.kewego.com:80/upload/getAvailableCategories?appToken=34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac5597ddbb12ab78f17e4635ba421f47b5a0
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 301
+      message: Moved Permanently
+    headers: 
+      location: 
+      - http://api.kewego.com/upload/getAvailableCategories/?appToken=34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac5597ddbb12ab78f17e4635ba421f47b5a0
+      server: 
+      - lighttpd
+      date: 
+      - Fri, 12 Aug 2011 14:25:37 GMT
+      content-length: 
+      - "0"
+    body: 
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.kewego.com:80/upload/getAvailableCategories/?appToken=34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac5597ddbb12ab78f17e4635ba421f47b5a0
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      expires: 
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      content-type: 
+      - text/html; charset=utf-8
+      server: 
+      - lighttpd
+      date: 
+      - Fri, 12 Aug 2011 14:25:38 GMT
+      transfer-encoding: 
+      - chunked
+    body: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\
+      <kewego_response>\n\
+      \t<message><categories><category><![CDATA[Actualidades]]></category><category><![CDATA[Animales]]></category><category><![CDATA[Arte]]></category><category><![CDATA[Autom\xC3\xB3vil]]></category><category><![CDATA[Aviaci\xC3\xB3n]]></category><category><![CDATA[Cine, teatro]]></category><category><![CDATA[Dibujos animados]]></category><category><![CDATA[Econom\xC3\xADa]]></category><category><![CDATA[Educaci\xC3\xB3n]]></category><category><![CDATA[Gastronom\xC3\xADa, Cocina]]></category><category><![CDATA[Historia]]></category><category><![CDATA[Humor]]></category><category><![CDATA[Inform\xC3\xA1tica, Internet]]></category><category><![CDATA[Juegos]]></category><category><![CDATA[Moda]]></category><category><![CDATA[M\xC3\xBAsica]]></category><category><![CDATA[People]]></category><category><![CDATA[Peque\xC3\xB1os anuncios]]></category><category><![CDATA[Publicidad]]></category><category><![CDATA[Salud]]></category><category><![CDATA[Ciencias]]></category><category><![CDATA[Deporte]]></category><category><![CDATA[Televisi\xC3\xB3n]]></category><category><![CDATA[Viajes]]></category></categories></message>\n\
+      \t<kewego_request>\n\
+      \t\t<url><![CDATA[http://api.kewego.com/upload/getAvailableCategories/?appToken=34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac5597ddbb12ab78f17e4635ba421f47b5a0]]></url>\n\
+      \t\t<get>\n\
+      \t\t\t<appToken><![CDATA[34b54efcb338fb42a12f479ae493780f3c2b234a4b0188fb8f2a3ba2af3806d038f2471459ae851bab977f09a466ac5597ddbb12ab78f17e4635ba421f47b5a0]]></appToken>\n\
+      \t\t</get>\n\
+      \t\t<post/>\n\
+      \t\t<file/>\n\
+      \t</kewego_request>\n\
+      \t<KqId>4e4537e2328e1</KqId>\n\
+      </kewego_response>\n"
+    http_version: "1.1"
