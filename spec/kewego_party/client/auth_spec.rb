@@ -19,7 +19,7 @@ describe KewegoParty::Client::Auth do
         # @client.app_get_token # Get and save the app_token
         @client.app_token = "d24267bee58313337341f46771f3eeaa64b9254856b0ff3dc6eab18718db0a5e"
         token = @client.auth_get_auth_token(:password => "demo", :username => "test@kewego.com")
-        puts token.inspect
+
         token.should_not be_nil
       end
     end
@@ -37,7 +37,7 @@ describe KewegoParty::Client::Auth do
         # @client.app_get_token # Get and save the app_token
         @client.app_token = "d24267bee58313337341f46771f3eeaa64b9254856b0ff3dc6eab18718db0a5e"
         token = @client.auth_get_login_token(:password => "demo", :username => "test@kewego.com")
-        puts token.inspect
+
         token.should_not be_nil
       end
     end
