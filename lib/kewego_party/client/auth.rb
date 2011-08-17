@@ -12,7 +12,8 @@ module KewegoParty
       #   KewegoParty.auth_get_auth_token
       def auth_get_auth_token(options = {})
         options = {:appToken => app_token, :username => self.login, :password => self.password}.merge options
-        get('/api/getAuthToken/', options, 2).kewego_response.message.token
+        response = get('/api/getAuthToken/', options, 2)
+        process_response(response, [:token])
       end
 
       # Generates a user token needed for adding and updating data in kewego
@@ -26,7 +27,8 @@ module KewegoParty
       #   KewegoParty.auth_get_login_token
       def auth_get_login_token(options = {})
         options = {:appToken => app_token, :username => self.login, :password => self.password}.merge options
-        get('/api/getLoginToken/', options, 2).kewego_response.message.token
+        response = get('/api/getLoginToken/', options, 2)
+        process_response(response, [:token])
       end
     end
   end

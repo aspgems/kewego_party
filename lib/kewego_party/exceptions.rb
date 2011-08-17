@@ -1,6 +1,5 @@
 module KewegoParty
-  module Exceptions
-    class TimeoutException < Exception; end
-    class InvalidResponseException < Exception; end
-  end
+  class TimeoutException < Exception; end
+  class InvalidResponseException < Exception; end
+  class ErrorResponseException < Exception; end
 end

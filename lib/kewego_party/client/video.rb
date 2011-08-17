@@ -12,7 +12,8 @@ module KewegoParty
       #   KewegoParty.video_get_details("some_sig_identifier")
       def video_get_details(sig, full_details = false)
         options = {:sig => sig, :fullDetails => full_details, :appToken  => app_token}
-        get("/video/getDetails/", options).kewego_response.message
+        response = get("/video/getDetails/", options)
+        process_response(response, [])
       end
 
       # Returns the stats of a video.
@@ -27,7 +28,8 @@ module KewegoParty
       #   KewegoParty.video_get_stats("some_sig_identifier")
       def video_get_stats(sig, options = {})
         options = {:type => 'day', :value => 15, :sig => sig, :appToken  => app_token}.merge options
-        get("/video/getStats/", options).kewego_response.message.stats
+        response = get("/video/getStats/", options)
+        process_response(response, [:stats])
       end
     end
   end

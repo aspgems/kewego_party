@@ -8,7 +8,7 @@ module KewegoParty
     end
 
     def app_token
-      self.app_token = with_caching(app_token_cache_key, :cache => app_token_cache_timeout) do
+      self.app_token = with_caching(app_token_cache_key, :cache => app_token_cache_timeout, :period => 0) do
         app_get_token
       end
       @app_token
@@ -23,6 +23,8 @@ module KewegoParty
       APICache.get(key, options) do
         yield
       end
+    rescue APICache::TimeoutError => err
+      raise KewegoParty::TimeoutException.new
     end
 
     def app_token_cache_key
@@ -31,6 +33,10 @@ module KewegoParty
 
     def app_token_cache_timeout
       22 * 3600
+    end
+
+    def cache_fail
+      raise
     end
   end
 end

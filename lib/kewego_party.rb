@@ -4,6 +4,7 @@ require 'api_cache'
 
 require 'kewego_party/configuration'
 require 'kewego_party/client'
+require 'kewego_party/exceptions'
 
 module KewegoParty
   extend Configuration

@@ -10,7 +10,8 @@ module KewegoParty
       #   KewegoParty.upload_get_available_categories
       def upload_get_available_categories
         options = {:appToken  => app_token}
-        get("/upload/getAvailableCategories", options).kewego_response.message.categories.category
+        response = get("/upload/getAvailableCategories", options)
+        process_response(response, [:categories, :category])
       end
 
       # Status of a video upload
@@ -22,7 +23,8 @@ module KewegoParty
       #   KewegoParty.upload_get_upload_progress('cd26e3d0fd21fec2589c6f7dd41078')
       def upload_get_upload_progress(upload_key)
         options = {:appToken  => app_token, :upload_key => upload_key}
-        get("/upload/getUploadProgress", options).kewego_response.message
+        response = get("/upload/getUploadProgress", options)
+        process_response(response, [])
       end
     end
   end

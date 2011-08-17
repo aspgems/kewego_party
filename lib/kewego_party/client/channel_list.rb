@@ -4,12 +4,14 @@ module KewegoParty
 
       def channel_list_get_channels(lsig, options = {})
         options = {:start => 0, :max_result_per_page => 100, :lsig => lsig, :appToken  => app_token}.merge options
-        get("/channelList/getChannels/", options).kewego_response.message.channels
+        response = get("/channelList/getChannels/", options)
+        process_response(response, [:channels])
       end
 
       def channel_list_get_details(lsig)
         options = {:lsig => lsig, :appToken  => app_token}
-        get("/channelList/getDetails/", options).kewego_response.message
+        response = get("/channelList/getDetails/", options)
+        process_response(response, [])
       end
     end
   end

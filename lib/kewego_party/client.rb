@@ -39,5 +39,24 @@ module KewegoParty
       @caching_store = store
       APICache.store = store
     end
+
+    private
+    def process_response(response, xml_path = [])
+      raise KewegoParty::InvalidResponseException.new(path) if response.nil? || !response.key?(:kewego_response)
+      
+      response = response[:kewego_response]
+      if response[:error]
+        raise KewegoParty::ErrorResponseException.new(response[:kewego_error])
+      else
+        response = response[:message]
+      end
+
+      xml_path = [xml_path || []].flatten.compact
+      xml_path.inject(response) do |response, path|
+        raise KewegoParty::InvalidResponseException.new(path) unless response.key?(path)
+
+        response[path]
+      end
+    end
   end
 end

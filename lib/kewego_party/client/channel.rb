@@ -4,12 +4,14 @@ module KewegoParty
 
       def channel_get_videos(csig, options = {})
         options = {:csig => csig, :appToken  => app_token}.merge options
-        get("/channel/getVideos/", options).kewego_response
+        response = get('/channel/getVideos/', options)
+        process_response(response, [])
       end
 
       def channel_get_details(csig, options = {})
         options = {:csig => csig, :appToken  => app_token}.merge options
-        get("/channel/getDetails/", options).kewego_response.message.channel
+        response = get('/channel/getDetails/', options)
+        process_response(response, [:channel])
       end
 
       # Thumbnail for a video
@@ -47,7 +49,8 @@ module KewegoParty
         default_options = {:csig => csig, :appToken => app_token, :language_code => language_code}
         options = default_options.merge options
 
-        get("/channel/getPlayerCode/", options).kewego_response.message.blog
+        response = get('/channel/getPlayerCode/', options)
+        process_response(response, [:blog])
       end
     end
   end
