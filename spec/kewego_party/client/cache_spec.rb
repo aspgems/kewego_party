@@ -4,7 +4,7 @@ require 'spec_helper'
 describe KewegoParty::Client::App do
 
   before do
-    @client = KewegoParty::Client.new(:token => 'd4c804fd0f42533351aca404313d26eb', :debug_output => STDOUT)
+    @client = KewegoParty::Client.new(:token => 'd4c804fd0f42533351aca404313d26eb')
   end
 
   it "should use the default APICache.store as caching_store" do

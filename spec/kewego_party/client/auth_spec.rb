@@ -4,7 +4,7 @@ require 'spec_helper'
 describe KewegoParty::Client::Auth do
 
   before do
-    @client = KewegoParty::Client.new(:token => 'd4c804fd0f42533351aca404313d26eb', :debug_output => STDOUT)
+    @client = KewegoParty::Client.new(:token => 'd4c804fd0f42533351aca404313d26eb')
   end
 
   describe ".auth_get_auth_token" do

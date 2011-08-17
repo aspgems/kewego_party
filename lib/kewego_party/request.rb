@@ -29,7 +29,12 @@ module KewegoParty
 
       response = self.class.send(method, connect_options[:url] + path, request_options.merge(:query => options))
 
-      raw ? response : response.parsed_response
+      if raw
+        response.body
+      else
+        raise_kewego_error(response.parsed_response)
+        response.parsed_response
+      end
     end
 
     def request_options
@@ -37,6 +42,14 @@ module KewegoParty
       options.merge!(:debug_output => debug_output) if debug_output
 
       options
+    end
+
+    def raise_kewego_error(response)
+      raise KewegoParty::InvalidResponseException.new() if response.nil? || !response.key?(:kewego_response)
+
+      if response[:kewego_response][:error] == "yes"
+        raise KewegoParty::ErrorResponseException.new(response[:kewego_response][:kewego_error])
+      end
     end
   end
 end
