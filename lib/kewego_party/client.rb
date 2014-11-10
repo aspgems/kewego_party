@@ -9,6 +9,7 @@ require 'kewego_party/client/auth'
 require 'kewego_party/client/channel_list'
 require 'kewego_party/client/channel'
 require 'kewego_party/client/upload'
+require 'kewego_party/client/user'
 require 'kewego_party/client/video'
 
 module KewegoParty
@@ -24,6 +25,7 @@ module KewegoParty
     include KewegoParty::Client::ChannelList
     include KewegoParty::Client::Channel
     include KewegoParty::Client::Upload
+    include KewegoParty::Client::User
     include KewegoParty::Client::Video
 
     attr_accessor(*(Configuration::VALID_OPTIONS_KEYS - [:app_token]))
